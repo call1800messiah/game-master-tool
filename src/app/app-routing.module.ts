@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { PersonComponent } from './entity/person/person.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: ''
+    component: PersonComponent
   }
 ];
 

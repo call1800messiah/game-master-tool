@@ -1,0 +1,18 @@
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Information } from '../../core/models/information.model';
+
+@Component({
+  selector: 'gmt-information',
+  templateUrl: './information.component.html',
+  styleUrls: ['./information.component.scss']
+})
+export class InformationComponent implements OnInit {
+  @Input() info: Information;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
