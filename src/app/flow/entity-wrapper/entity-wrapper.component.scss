@@ -1,0 +1,35 @@
+article{
+  background: rgb(255,255,255);
+  border: 2px solid rgb(127,127,127);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  
+  &:before {
+    background: rgb(127,127,127);
+    border-radius: 5px 5px 0 0;
+    content: '';
+    height: 5px;
+    margin-right: -5px;
+    position: absolute;
+    right: 50%;
+    top: -5px;
+    width: 10px;
+  }
+    
+  header {
+    background: rgb(127,127,127);
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    padding: 10px 20px;
+    
+    h2 {
+      margin: 0;
+    }
+  }
+  
+  .content {
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+  }
+}

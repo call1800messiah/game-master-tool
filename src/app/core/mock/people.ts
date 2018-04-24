@@ -9,9 +9,10 @@ export const PEOPLE: Person[] = [
     [new Information("Dies ist eine Information über die Person","1.4.18",1,true),
       new Information("Dies ist eine Information über die Person","1.4.18",1,true)],
     "",
-    new Attribute("Alrik Backmann","1.4.18",1,true,"Name"),
+    "Alrik Backmann",
     new Attribute("Bäcker","1.4.18",1,true,"Profession"),
-    new Attribute("Mittelländer","1.4.18",1,true,"Rasse")
+    new Attribute("Mittelländer","1.4.18",1,true,"Rasse"),
+    true
   ),
   new Person(
     new Attribute("13. Ingerimm 1001 BF","1.4.18",1,true,"Geburtstag"),
@@ -19,8 +20,9 @@ export const PEOPLE: Person[] = [
     [new Information("Dies ist eine Information über die Person","1.4.18",1,true),
       new Information("Dies ist eine Information über die Person","1.4.18",1,true)],
     "",
-    new Attribute("Alrike Kriegerin","1.4.18",1,true,"Name"),
+    "Alrike Kriegerin",
     new Attribute("Krieger","1.4.18",1,true,"Profession"),
-    new Attribute("Tulamide","1.4.18",1,true,"Rasse")
+    new Attribute("Tulamide","1.4.18",1,true,"Rasse"),
+    true
   )
 ];

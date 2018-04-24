@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { PersonComponent } from './entity/person/person.component';
+
+import { FlowComponent } from './flow/flow/flow.component';
+
+
 
 const routes: Routes = [
   {
     path: '',
-    component: PersonComponent
+    component: FlowComponent
   }
 ];
 

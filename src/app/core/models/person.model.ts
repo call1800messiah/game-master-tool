@@ -1,14 +1,18 @@
 import { Information } from './information.model';
 import { Attribute } from './attribute.model';
+import {Entity} from './entity.model';
 
-export class Person {
+export class Person extends Entity {
   constructor(
     public birthdate: Attribute,
     public deathdate: Attribute,
     public information: Information[],
-    public image: String,
-    public name: Attribute,
+    public image: string,
+    public name: string,
     public profession: Attribute,
-    public race: Attribute
-  ){}
+    public race: Attribute,
+    public visible: boolean
+  ){
+    super(name,'Person',visible);
+  }
 }
