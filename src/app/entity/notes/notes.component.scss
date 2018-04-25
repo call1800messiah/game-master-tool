@@ -1,0 +1,17 @@
+gmt-information {
+  display: block;
+}
+
+.btn-add-info {
+  background: white;
+  border: none;
+  color: white;
+  display: block;
+  height: 5px;
+  width: 100%;
+  
+  &:hover {
+    background: rgb(127,127,127);
+    cursor: pointer;
+  }
+}

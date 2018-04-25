@@ -14,9 +14,9 @@ export class FlowComponent implements OnInit {
   flow: Entity[];
 
   constructor(private dataService: DataService) { 
-    this.dataService.getPeople().subscribe(
-      flow => this.flow = flow
-    );
+    this.dataService.getFlow().subscribe((flow) =>  { 
+      this.flow = flow;
+    });
   }
 
   ngOnInit() {

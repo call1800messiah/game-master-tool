@@ -15,6 +15,7 @@ export class EntityWrapperComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

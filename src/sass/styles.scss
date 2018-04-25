@@ -1,2 +1,12 @@
 @import './variables';
 @import './mixins';
+
+html,body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Overlock', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}

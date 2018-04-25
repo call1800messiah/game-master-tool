@@ -1,4 +1,5 @@
 <div>
   <div *ngIf="info.label" [innerHTML]="info.label" class="label"></div>
-  <div [innerHTML]="info.content" class="content"></div>
+  <div *ngIf="!editing" [innerHTML]="info.content" class="content" (click)="startEdit()"></div>
+  <input type="text" *ngIf="editing" [(ngModel)]="info.content" (blur)="cancelEdit()" />
 </div>

@@ -9,10 +9,18 @@ import { Information } from '../../core/models/information.model';
 })
 export class InformationComponent implements OnInit {
   @Input() info: Information;
+  editing: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
+  
+  cancelEdit(){
+    this.editing = false;
+  }
 
+  startEdit(){
+    this.editing = true;
+  }
 }

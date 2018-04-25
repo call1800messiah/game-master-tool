@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AddEntityComponent } from './add-entity/add-entity.component';
-import { EntityWrapperComponent } from './entity-wrapper/entity-wrapper.component';
+import { EntityModule } from '../entity/entity.module';
 import { FlowComponent } from './flow/flow.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,14 +12,14 @@ import { FlowComponent } from './flow/flow.component';
 @NgModule({
   declarations: [
     AddEntityComponent,
-    EntityWrapperComponent,
     FlowComponent
   ],
   exports: [
     FlowComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    EntityModule
   ]
 })
 export class FlowModule { }

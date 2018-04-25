@@ -1,3 +1,7 @@
 <main>
-  <gmt-entity-wrapper *ngFor="let item of flow" entity="item"></gmt-entity-wrapper>
+  <gmt-add-entity></gmt-add-entity>
+  <ng-container *ngFor="let entity of flow">
+    <gmt-entity-wrapper [entity]="entity"></gmt-entity-wrapper>
+    <gmt-add-entity></gmt-add-entity>
+  </ng-container>
 </main>

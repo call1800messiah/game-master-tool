@@ -2,6 +2,7 @@ article{
   background: rgb(255,255,255);
   border: 2px solid rgb(127,127,127);
   border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
   margin-bottom: 20px;
   position: relative;
   
@@ -19,12 +20,20 @@ article{
     
   header {
     background: rgb(127,127,127);
-    border-radius: 20px 20px 0 0;
+    border-radius: 15px 15px 0 0;
     color: #fff;
     padding: 10px 20px;
+    position: relative;
     
     h2 {
+      font-size: 16px;
       margin: 0;
+    }
+    
+    .entity-type {
+      position: absolute;
+      right: 20px;
+      top: 10px;
     }
   }
   
