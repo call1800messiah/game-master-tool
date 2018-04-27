@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let nav of navigation">
+    <a routerLink="{{nav.route}}" routerLinkActive="active" [innerHTML]="nav.title"></a>
+    <ul *ngIf="nav.hasChildren">
+      <li *ngFor="let child of nav.children">
+        <a routerLink="nav.route" routerLinkActive="active" [innerHTML]="child.title"></a>
+      </li>
+    </ul>
+  </li>
+</ul>

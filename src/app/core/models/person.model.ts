@@ -4,6 +4,7 @@ import {Entity} from './entity.model';
 
 export class Person extends Entity {
   constructor(
+    public id: string,
     public birthdate: Attribute,
     public deathdate: Attribute,
     public information: Information[],
@@ -13,6 +14,6 @@ export class Person extends Entity {
     public race: Attribute,
     public visible: boolean
   ){
-    super(name,'Person',visible);
+    super(id, name,'Person',visible);
   }
 }

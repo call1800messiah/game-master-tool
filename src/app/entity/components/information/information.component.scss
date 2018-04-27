@@ -1,0 +1,30 @@
+.content {
+  border: 1px solid white;
+  margin: 0 -1px;
+  
+  &:hover {
+    border: 1px solid rgb(197,197,197);
+    cursor: pointer;
+  }
+}
+
+input {
+  line-height: 21px;
+  padding: 0 3px;
+  width: calc(100% - 8px);
+}
+
+.label {
+  display: inline-block;
+  font-weight: bold;
+  width: 33%;
+}
+
+.label + .content {
+  display: inline-block;
+  width: 66%;
+}
+
+.label + input {
+  width: calc(66% - 8px);
+}

@@ -1,7 +1,9 @@
-<main>
+<gmt-list-index [list]="flow" [listOrder]="name" [listDirection]="true" [showLabel]="true"></gmt-list-index>
+
+<div id="page-flow">
   <gmt-add-entity></gmt-add-entity>
   <ng-container *ngFor="let entity of flow">
     <gmt-entity-wrapper [entity]="entity"></gmt-entity-wrapper>
     <gmt-add-entity></gmt-add-entity>
   </ng-container>
-</main>
+</div>

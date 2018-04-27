@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AddEntityComponent } from './add-entity/add-entity.component';
 import { EntityModule } from '../entity/entity.module';
 import { FlowComponent } from './flow/flow.component';
+import { FlowRoutingModule } from './flow-routing.module';
 import { SharedModule } from '../shared/shared.module';
-
 
 
 
@@ -19,7 +19,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    EntityModule
+    EntityModule,
+    FlowRoutingModule,
+    SharedModule
   ]
 })
 export class FlowModule { }

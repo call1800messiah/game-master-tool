@@ -1,21 +1,39 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { FlowComponent } from './flow/flow/flow.component';
+import { EntityComponent } from './entity/components/entity/entity.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 
 
 const routes: Routes = [
+//  {
+//    path: 'entity',
+//    component: EntityComponent
+//  },
+  {
+    path: 'flow',
+    loadChildren: './flow/flow.module#FlowModule'
+  },
   {
     path: '',
-    component: FlowComponent
+    redirectTo: '/flow',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
+  ]
 })
 export class AppRoutingModule {}

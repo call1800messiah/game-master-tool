@@ -1,0 +1,17 @@
+.dice-roller {
+  background: rgb(191,191,191);
+  height: 30px;
+  padding: 10px 20px;
+  
+  button {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    margin-right: 10px;
+  }
+  
+  .more {
+    float: right;
+    margin-right: 0;
+  }
+}
