@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import {Entity} from '../../../core/models/entity.model';
+import { Entity } from '@app/core';
 
 
 

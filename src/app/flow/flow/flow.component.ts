@@ -13,8 +13,8 @@ import {Entity} from '../../core/models/entity.model';
 export class FlowComponent implements OnInit {
   flow: Entity[];
 
-  constructor(private dataService: DataService) { 
-    this.dataService.getFlow().subscribe((flow) =>  { 
+  constructor(private dataService: DataService) {
+    this.dataService.getFlow().subscribe((flow) =>  {
       this.flow = flow;
     });
   }

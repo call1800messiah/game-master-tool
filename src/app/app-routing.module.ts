@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { EntityComponent } from './entity/components/entity/entity.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 
 
 const routes: Routes = [
-//  {
-//    path: 'entity',
-//    component: EntityComponent
-//  },
+  {
+    path: 'entity',
+    loadChildren: './entity/entity.module#EntityModule'
+  },
   {
     path: 'flow',
     loadChildren: './flow/flow.module#FlowModule'

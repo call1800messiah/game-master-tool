@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Information } from '../../../core/models/information.model';
+import { Information } from '@app/core';
+
+
 
 @Component({
   selector: 'gmt-information',

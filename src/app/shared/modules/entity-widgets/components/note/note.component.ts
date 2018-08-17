@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Note} from '../../../core/models/note.model';
+
+import { Note } from '@app/core/';
+
+
 
 @Component({
   selector: 'gmt-note',

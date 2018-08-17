@@ -1,6 +1,6 @@
 import { Information } from './information.model';
 import { Attribute } from './attribute.model';
-import {Entity} from './entity.model';
+import { Entity } from './entity.model';
 
 export class Person extends Entity {
   constructor(
@@ -14,6 +14,6 @@ export class Person extends Entity {
     public race: Attribute,
     public visible: boolean
   ){
-    super(id, name,'Person',visible);
+    super(id, name, 'Person', visible);
   }
 }

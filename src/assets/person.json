@@ -1,0 +1,109 @@
+{
+  "helden": {
+    "held": {
+      "key": "1534516752500",
+      "name": "Asconio ya Valiente",
+      "stand": "1534518613296",
+      "mods": {},
+      "basis": {
+        "geschlecht": {
+          "name": "männlich"
+        },
+        "settings": {
+          "name": "DSA4.1"
+        },
+        "rasse": {
+          "name": "",
+          "string": "",
+          "groesse": {
+            "gewicht": "",
+            "value": ""
+          },
+          "aussehen": {
+            "alter": "",
+            "augenfarbe": "bernsteingelb",
+            "aussehentext0": "",
+            "aussehentext1": "",
+            "aussehentext2": "",
+            "aussehentext3": "",
+            "familietext0": "",
+            "familietext1": "",
+            "familietext2": "",
+            "familietext3": "",
+            "familietext4": "",
+            "familietext5": "",
+            "gbjahr": "1003",
+            "gbmonat": "1",
+            "gbtag": "7",
+            "gprest": "0",
+            "gpstart": "110",
+            "haarfarbe": "dunkelblond",
+            "kalender": "Bosparans Fall",
+            "stand": "Nobilitat",
+            "titel": "Signor"
+          }
+        },
+        "kultur": {
+          "name": "",
+          "string": ""
+        },
+        "ausbildungen": [
+          {
+            "art": "",
+            "name": "",
+            "string": "",
+            "tarnidentitaet": "",
+            "variante": {
+              "name": ""
+            }
+          }
+        ],
+        "verify": {
+          "value": ""
+        },
+        "notiz": {
+          "notiz0": "",
+          "notiz1": "",
+          "notiz2": "",
+          "notiz3": "",
+          "notiz4": "",
+          "notiz5": "",
+          "notiz6": "",
+          "notiz7": "",
+          "notiz8": "",
+          "notiz9": "",
+          "notiz10": ""
+        },
+        "portraet": {
+          "value": ""
+        },
+        "abenteuerpunkte": {
+          "value": "1540"
+        },
+        "freieabenteuerpunkte": {
+          "value": "9"
+        }
+      },
+      "eigenschaften": [
+        {
+          "mod": "",
+          "name": "",
+          "startwert": "",
+          "value": ""
+        }
+      ],
+      "vt": [],
+      "sf": [],
+      "ereignisse": [],
+      "talentliste": [],
+      "zauberliste": [],
+      "kampf": [],
+      "gegenstände": [],
+      "BoniWaffenlos": {},
+      "kommentare": [],
+      "ausrüstungen": [],
+      "verbindungen": [],
+      "extension": {}
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { DataService } from './services/data.service';
 import { NavigationService } from './services/navigation.service';
@@ -9,7 +10,6 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DiceModule } from '../dice/dice.module';
-import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -26,7 +26,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     DiceModule,
-    SharedModule
+    RouterModule
   ],
   providers: [
     DataService,

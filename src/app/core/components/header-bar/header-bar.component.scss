@@ -21,4 +21,15 @@ header {
     padding-left: 100px;
     width: 400px;
   }
+  
+  .search-bar {
+    input {
+      background: rgb(191,191,191);
+      border: none;
+      height: 30px;
+      margin: 0;
+      padding: 10px;
+      width: calc(100% - 20px);
+    }
+  }
 }
