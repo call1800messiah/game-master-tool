@@ -8,6 +8,6 @@ export class Attribute extends Information {
     public visible: boolean,
     public label: string
   ){
-    super(content,created,user,visible);
+    super(content, created, user, visible);
   }
 }
