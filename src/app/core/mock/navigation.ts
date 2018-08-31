@@ -67,7 +67,7 @@ export const NAVIGATION: any[] = [
       }
     ],
     hasChildren: true,
-    route: '/conflict'
+    route: '/combat'
   },
   {
     title: "Anzeige",

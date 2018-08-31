@@ -7,6 +7,10 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 
 const routes: Routes = [
   {
+    path: 'combat',
+    loadChildren: './combat/combat.module#CombatModule'
+  },
+  {
     path: 'entity',
     loadChildren: './entity/entity.module#EntityModule'
   },

@@ -1,0 +1,25 @@
+<div id="combat-page">
+  <form>
+    <div class="input-group">
+      <label>Name</label>
+      <input type="text" #newCombatantName />
+    </div>
+
+    <div class="input-group">
+      <label>Initiative</label>
+      <input type="range" max="30" min="0" step="1" #newCombatantIni />
+      <input type="text" [value]="newCombatantIni.value" disabled="disabled" />
+    </div>
+
+    <button type="button" (click)="addCombatant(newCombatantName.value, newCombatantIni.value)">Hinzufügen</button>
+  </form>
+
+  <div class="initiative-list">
+    <div class="combatant" *ngFor="let combatant of combatants | keyvalue">
+      <span class="initiave">{{combatant.key}}</span>
+      <ul>
+        <li class="name" *ngFor="let name of combatant.value">{{name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
