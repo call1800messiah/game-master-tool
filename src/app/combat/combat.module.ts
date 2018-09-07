@@ -5,8 +5,8 @@ import { CombatRoutingModule } from '@app/combat/combat-routing.module';
 
 @NgModule({
   imports: [
-    CombatRoutingModule,
     CommonModule,
+    CombatRoutingModule,
   ],
   declarations: [InitiativeComponent]
 })

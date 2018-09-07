@@ -18,8 +18,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FlowRoutingModule,
-    SharedModule
   ]
 })
 export class FlowModule { }

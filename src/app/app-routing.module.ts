@@ -2,30 +2,36 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { AuthGuardService } from '@app/core/services/auth-guard.service';
 
 
 
 const routes: Routes = [
   {
+    loadChildren: './auth/auth.module#AuthModule',
+    path: 'auth',
+  },
+  {
+    loadChildren: './combat/combat.module#CombatModule',
     path: 'combat',
-    loadChildren: './combat/combat.module#CombatModule'
   },
   {
+    loadChildren: './entity/entity.module#EntityModule',
     path: 'entity',
-    loadChildren: './entity/entity.module#EntityModule'
   },
   {
+    canLoad: [AuthGuardService],
+    loadChildren: './flow/flow.module#FlowModule',
     path: 'flow',
-    loadChildren: './flow/flow.module#FlowModule'
   },
-  {
+  {    
     path: '',
+    pathMatch: 'full',
     redirectTo: '/flow',
-    pathMatch: 'full'
   },
   {
-    path: '**',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
+    path: '**',    
   }
 ];
 

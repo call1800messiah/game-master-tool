@@ -16,7 +16,7 @@ import { EntityRoutingModule } from './entity-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    EntityRoutingModule
+    EntityRoutingModule,
   ]
 })
 export class EntityModule { }

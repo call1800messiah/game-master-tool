@@ -2,7 +2,6 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { DataService } from './services/data.service';
 import { NavigationService } from './services/navigation.service';
 import { SearchService } from './services/search.service';
 import { ModuleImportGuard } from './module-import.guard';
@@ -29,7 +28,6 @@ import { DiceModule } from '../dice/dice.module';
     RouterModule
   ],
   providers: [
-    DataService,
     NavigationService,
     SearchService,
     ModuleImportGuard
