@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Attribute } from '@app/core';
+import { Information } from '@app/core';
 
 
 
@@ -10,7 +10,7 @@ import { Attribute } from '@app/core';
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent implements OnInit {
-  @Input() info: Attribute;
+  @Input() info: Information;
   editing: boolean = false;
 
   constructor() { }

@@ -21,6 +21,6 @@ export class ListIndexComponent implements OnInit {
   }
   
   trackByFn(index: number, item: Entity) {
-    return item.id;
+    return item._id;
   }
 }

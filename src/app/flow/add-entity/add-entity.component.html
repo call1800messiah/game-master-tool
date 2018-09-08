@@ -1,1 +1,8 @@
-<button class="add-entity">+</button>
+
+<div class="add-entity">
+  <button class="add-entity-btn">+</button>
+  <div class="add-entity-selection">
+    <button class="entity-creation-btn" (click)="onAddEntity('note')">Notiz</button>
+    <button class="entity-creation-btn" (click)="onAddEntity('person')">Person</button>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { FLOW } from '../mock/flow';
 import { NAVIGATION } from '../mock/navigation';
 import { NOTES } from '../mock/notes';
 import { Note } from '../models/note.model';
+import { CLASSES } from '../enum/classes';
 
 
 
@@ -18,22 +19,41 @@ import { Note } from '../models/note.model';
 })
 export class DataService {
   private socket;
-  private people: Person[];
-  private dataSubject: Subject<any[]>;
+  private data: object = {};
+  private dataSubject: object = {};
   
   constructor() {
     this.socket = socketIO(CONFIG.DB);
+    this.socket.on('dataRetrieved', (data: any) => {
+      if (data.content) {
+        this.data[data.className] = data.content as Entity[];
+      } else {
+        this.data[data.className] = [];
+      }
+      this.dataSubject[data.className].next(this.data[data.className])
+    });
+    this.socket.on('dataCreated', (data: any) => {
+      this.data[data.className].push(data.content);
+      this.dataSubject[data.className].next(this.data[data.className]);
+    });
+    this.socket.on('dataDeleted', (data: any) => {
+      this.data[data.className].splice(this.data[data.className].indexOf(this.data[data.className].filter((obj) => obj._id === data.id)[0]), 1);
+      this.dataSubject[data.className].next(this.data[data.className]);
+    });
+    this.socket.on('dataUpdated', (data: any) => {
+      this.data[data.className].splice(this.data[data.className].indexOf(this.data[data.className].filter((obj) => obj._id === data.content._id)[0]), 1, data.content);
+      this.dataSubject[data.className].next(this.data[data.className]);
+    });
   }
   
   getFlow(): Observable<Entity[]> {
-    return of(FLOW);
+//    return of(FLOW);
+    return this.retrieve(CLASSES.Person);
   }
 
   getPeople(): Observable<Person[]> {
-    return of(PEOPLE);
-//    this.setupDataSubject();
-//    this.socket.emit('retrieve', null);
-//    return this.dataSubject.asObservable();
+//    return of(PEOPLE);
+    return this.retrieve(CLASSES.Person);
   }
   
   getNavigation(): Observable<any[]> {
@@ -41,30 +61,28 @@ export class DataService {
   }
   
   getNotes(): Observable<Note[]> {
-    return of(NOTES);
+//    return of(NOTES);
+    return this.retrieve(CLASSES.Note);
   }
   
-  
-  private setupDataSubject() {
-    if (this.dataSubject === undefined) {
-      this.dataSubject = new Subject();
-      
-      this.socket.on('retrieveAllData', (data) => {
-        this.people = data;
-        this.dataSubject.next(this.people)
-      });
-      this.socket.on('dataCreated', (data) => {
-        this.people.push(data);
-        this.dataSubject.next(this.people);
-      });
-      this.socket.on('dataDeleted', (id) => {
-        this.people.splice(this.people.indexOf(this.people.filter((obj) => obj._id === id)[0]), 1);
-        this.dataSubject.next(this.people);
-      });
-      this.socket.on('dataUpdated', (data) => {
-        this.people.splice(this.people.indexOf(this.people.filter((obj) => obj._id === data._id)[0]), 1, data);
-        this.dataSubject.next(this.people);
-      });
+  create(className: CLASSES, data: any): void {
+    this.socket.emit('create', { className: className, content: data });
+  }
+
+  delete(className: CLASSES, data:any): void {
+    this.socket.emit('delete', { className: className, content: data });
+  }
+
+  update(className: CLASSES, data:any): void {
+    this.socket.emit('update', { className: className, content: data });
+  }
+
+  retrieve(className: CLASSES): Observable<any[]> {
+    if (this.dataSubject[className] === undefined) {
+      this.dataSubject[className] = new Subject();
     }
+    console.log(this.dataSubject);
+    this.socket.emit('retrieve', { className: className });
+    return this.dataSubject[className].asObservable();
   }
 }

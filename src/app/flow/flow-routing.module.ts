@@ -8,7 +8,7 @@ import { AuthGuardService } from '@app/core/services/auth-guard.service';
 
 const routes: Routes = [
   {
-    canActivate: [ AuthGuardService ],
+//    canActivate: [ AuthGuardService ],
     component: FlowComponent,
     path: '',    
   }

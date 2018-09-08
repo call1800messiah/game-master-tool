@@ -3,6 +3,7 @@ export class Information {
         public content: string,
         public created: string,
         public user: number,
-        public visible: boolean
+        public visible: boolean,
+        public label?: string
     ){}
 }

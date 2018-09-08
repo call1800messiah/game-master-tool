@@ -3,11 +3,11 @@ import {Information} from "./information.model";
 
 export class Note extends Entity{
   constructor(
-    public id: string,
-    public information: Information[],
     public name: string,
-    public visible: boolean
+    public visible: boolean,
+    public _id?: string,
+    public information?: Information[],
   ){
-    super(id,name,'Notiz',visible);
+    super(name, 'note', visible, _id);
   }
 }

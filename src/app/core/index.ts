@@ -1,6 +1,7 @@
 export * from './core.module';
 
-export * from './models/attribute.model';
+export * from './enum/classes';
+
 export * from './models/entity.model';
 export * from './models/information.model';
 export * from './models/note.model';

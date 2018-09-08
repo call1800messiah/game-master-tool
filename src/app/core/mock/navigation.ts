@@ -31,30 +31,6 @@ export const NAVIGATION: any[] = [
     route: '/entity'
   },
   {
-    title: "Erstellen",
-    hasChildren: true,
-    children: [
-      {
-        title: "Person"
-      },
-      {
-        title: "Ort"
-      },
-      {
-        title: "Gegenstand"
-      },
-      {
-        title: "Ereignis"
-      },
-      {
-        title: "Szene"
-      },
-      {
-        title: "Abenteuer"
-      }
-    ]
-  },
-  {
     title: "Konflikte",
     children: [
       {

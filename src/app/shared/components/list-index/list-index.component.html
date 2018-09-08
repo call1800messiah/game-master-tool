@@ -2,7 +2,7 @@
   <h2>Inhalt</h2>
   <ul>
     <li *ngFor="let item of list; trackBy: trackByFn">
-      <gmt-label *ngIf="showLabel" [label]="item.type"></gmt-label>
+      <gmt-label *ngIf="showLabel" [label]="item.className"></gmt-label>
       <a href="{{'#'+item.type+'-'+item.id}}" [innerHTML]="item.name"></a>
     </li>
   </ul>
