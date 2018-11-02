@@ -11,6 +11,7 @@ import { NAVIGATION } from '../mock/navigation';
 import { NOTES } from '../mock/notes';
 import { Note } from '../models/note.model';
 import { CLASSES } from '../enum/classes';
+import { AuthService } from '@app/core/services/auth.service';
 
 
 
@@ -20,10 +21,11 @@ import { CLASSES } from '../enum/classes';
 export class DataService {
   private socket;
   private data: object = {};
-  private dataSubject: object = {};
+  private dataSubject = {};
   
-  constructor() {
-    this.socket = socketIO(CONFIG.DB);
+  constructor(private auth: AuthService) {
+    this.socket = this.auth.getSocket();
+    
     this.socket.on('dataRetrieved', (data: any) => {
       if (data.content) {
         this.data[data.className] = data.content as Entity[];
@@ -78,11 +80,14 @@ export class DataService {
   }
 
   retrieve(className: CLASSES): Observable<any[]> {
+    this.setupDataSubject(className);
+    this.socket.emit('retrieve', { className: className });
+    return this.dataSubject[className].asObservable();
+  }
+  
+  private setupDataSubject(className: CLASSES) {
     if (this.dataSubject[className] === undefined) {
       this.dataSubject[className] = new Subject();
     }
-    console.log(this.dataSubject);
-    this.socket.emit('retrieve', { className: className });
-    return this.dataSubject[className].asObservable();
   }
 }

@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'entity',
   },
   {
-//    canLoad: [AuthGuardService],
+    canLoad: [AuthGuardService],
     loadChildren: './flow/flow.module#FlowModule',
     path: 'flow',
   },
