@@ -1,0 +1,38 @@
+.overlay {
+  background: rgba(0,0,0,0.5);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  
+  &.visible {
+    display: block;
+  }
+  
+  .modal {
+    background: white;
+    border-radius: 20px;
+    height: 400px;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    
+    .dismiss {
+      background: transparent;
+      border: none;
+      color: #7f7f7f;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+}

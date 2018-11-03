@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as socketIO from 'socket.io-client';
 import { Observable, Subject,  of } from 'rxjs';
 
-import { CONFIG } from "../config";
 import { Person } from '../models/person.model';
 import { PEOPLE } from '../mock/people';
 import { Entity } from '../models/entity.model';

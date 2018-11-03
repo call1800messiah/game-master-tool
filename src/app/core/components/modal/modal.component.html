@@ -1,0 +1,6 @@
+<div class="overlay" (click)="dismissModal()" [ngClass]="{'visible': visible}">
+  <div class="modal">
+    <button class="dismiss" (click)="dismissModal()">X</button>
+    <ng-template gmt-modal-host></ng-template>
+  </div>
+</div>

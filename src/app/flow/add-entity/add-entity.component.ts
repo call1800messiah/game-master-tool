@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, CLASSES, Information, Person, Note } from '@app/core';
+import { DataService, ModalService, CLASSES, Information, Person, Note } from '@app/core';
+import { PersonComponent } from '@app/shared/modules/entity-widgets/components/person/person.component';
 
 @Component({
   selector: 'gmt-add-entity',
@@ -8,7 +9,7 @@ import { DataService, CLASSES, Information, Person, Note } from '@app/core';
 })
 export class AddEntityComponent implements OnInit {
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private modalService: ModalService) { }
 
   ngOnInit() {
   }
@@ -18,10 +19,7 @@ export class AddEntityComponent implements OnInit {
     
     switch(className) {
       case 'person': 
-        this.dataService.create(CLASSES.Person, new Person(
-          "Alrik Backmann",
-          true,
-        ));
+        this.modalService.openModal(PersonComponent, {});
         break;
       case 'note':
         this.dataService.create(CLASSES.Note, new Note(

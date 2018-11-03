@@ -1,11 +1,11 @@
 <article id="{{entity.type+'-'+entity.id}}}">
   <header>
     <h2 [innerHTML]="entity.name"></h2>
-    <gmt-label [label]="entity.type" class="entity-type"></gmt-label>
+    <gmt-label [label]="entity.className" class="entity-type"></gmt-label>
   </header>
 
-  <div class="content" [ngSwitch]="entity.type">
-    <gmt-person *ngSwitchCase="'Person'" [person]="entity"></gmt-person>
-    <gmt-note *ngSwitchCase="'Notiz'" [note]="entity"></gmt-note>
+  <div class="content" [ngSwitch]="entity.className">
+    <gmt-person *ngSwitchCase="'person'" [person]="entity"></gmt-person>
+    <gmt-note *ngSwitchCase="'note'" [note]="entity"></gmt-note>
   </div>
 </article>

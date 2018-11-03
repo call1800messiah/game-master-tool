@@ -27,6 +27,9 @@ import { PersonComponent } from './components/person/person.component';
     EntityListComponent,
     LabelComponent
   ],
+  entryComponents:[
+    PersonComponent
+  ],
   imports: [
     CommonModule,
     FormsModule

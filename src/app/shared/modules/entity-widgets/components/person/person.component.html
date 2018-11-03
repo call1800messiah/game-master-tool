@@ -3,10 +3,10 @@
     <img [src]="person.image" title="person.name.content" alt="person.name.content" />
   </div>
   <div class="attributes">
-    <gmt-information [info]="person.birthdate"></gmt-information>
-    <gmt-information [info]="person.deathdate"></gmt-information>
-    <gmt-information [info]="person.profession"></gmt-information>
-    <gmt-information [info]="person.race"></gmt-information>
+    <gmt-information [info]="person.birthdate" *ngIf="person.birthdate"></gmt-information>
+    <gmt-information [info]="person.deathdate" *ngIf="person.deathdate"></gmt-information>
+    <gmt-information [info]="person.profession" *ngIf="person.profession"></gmt-information>
+    <gmt-information [info]="person.race" *ngIf="person.race"></gmt-information>
   </div>
   
   <div class="information">

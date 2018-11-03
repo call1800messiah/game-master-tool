@@ -16,7 +16,7 @@ import { EntityWidgetsModule } from './modules/entity-widgets/entity-widgets.mod
   declarations: [
     SearchBarComponent,
     AutofocusDirective,
-    ListIndexComponent
+    ListIndexComponent,
   ],
   exports: [
     CommonModule,
