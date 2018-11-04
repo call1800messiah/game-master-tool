@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Information } from '@app/core';
 
@@ -11,18 +11,25 @@ import { Information } from '@app/core';
 })
 export class InformationComponent implements OnInit {
   @Input() info: Information;
+  @Output() changed = new EventEmitter<object>();
   editing: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-  
-  cancelEdit(){
-    this.editing = false;
-  }
 
-  startEdit(){
+  startEdit(): void {
     this.editing = true;
+  }
+  
+  stopEdit(content: string): void {
+    this.editing = false;
+    this.changed.emit(Object.assign({}, this.info, { content }));
+  }
+  
+  setVisibility(visible: boolean): void {
+    this.info.visible = visible;
+    this.changed.emit(Object.assign({}, this.info, { visible }));
   }
 }

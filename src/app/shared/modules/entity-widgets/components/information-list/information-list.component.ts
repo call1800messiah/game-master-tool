@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Information } from '@app/core/';
+import { Information, AuthService } from '@app/core/';
 
 
 
@@ -12,12 +12,12 @@ import { Information } from '@app/core/';
 export class InformationListComponent implements OnInit {
   @Input() information: Information[];
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  addInfo(){
+  addInfo(index?: number){
     
   }
 }

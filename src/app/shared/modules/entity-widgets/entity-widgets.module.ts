@@ -9,6 +9,7 @@ import { InformationListComponent } from './components/information-list/informat
 import { LabelComponent } from './components/label/label.component';
 import { NoteComponent } from './components/note/note.component';
 import { PersonComponent } from './components/person/person.component';
+import { ButtonVisibleComponent } from './components/button-visible/button-visible.component';
 
 
 
@@ -20,7 +21,8 @@ import { PersonComponent } from './components/person/person.component';
     InformationListComponent,
     LabelComponent,
     NoteComponent,
-    PersonComponent
+    PersonComponent,
+    ButtonVisibleComponent
   ],
   exports: [
     EntityWrapperComponent,

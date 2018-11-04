@@ -41,7 +41,8 @@ export class DataService {
       this.dataSubject[data.className].next(this.data[data.className]);
     });
     this.socket.on('dataUpdated', (data: any) => {
-      this.data[data.className].splice(this.data[data.className].indexOf(this.data[data.className].filter((obj) => obj._id === data.content._id)[0]), 1, data.content);
+      const target = this.data[data.className].filter((obj) => obj._id === data.content._id)[0];
+      this.data[data.className].splice(this.data[data.className].indexOf(target), 1, data.content);
       this.dataSubject[data.className].next(this.data[data.className]);
     });
   }
@@ -73,7 +74,7 @@ export class DataService {
     this.socket.emit('delete', { className: className, content: data });
   }
 
-  update(className: CLASSES, data:any): void {
+  update(className: string, data:any): void {
     this.socket.emit('update', { className: className, content: data });
   }
 

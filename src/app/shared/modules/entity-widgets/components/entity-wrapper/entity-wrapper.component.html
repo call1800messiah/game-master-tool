@@ -1,7 +1,9 @@
 <article id="{{entity.type+'-'+entity.id}}}">
   <header>
-    <h2 [innerHTML]="entity.name"></h2>
+    <h2 *ngIf="!editing" [innerHTML]="entity.name" (click)="startEdit()"></h2>
+    <input type="text" *ngIf="editing" [(ngModel)]="entity.name" (blur)="stopEdit(entity.name)" gmtAutofocus />
     <gmt-label [label]="entity.className" class="entity-type"></gmt-label>
+    <gmt-button-visible [visible]="entity.visible" (click)="updateEntityVisibility($event)"></gmt-button-visible>
   </header>
 
   <div class="content" [ngSwitch]="entity.className">

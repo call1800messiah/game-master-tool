@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Person } from '@app/core';
+import { Person, Information, DataService, CLASSES } from '@app/core';
 import { ModalChild } from '@app/core/interfaces/IModalChild';
 
 @Component({
@@ -12,7 +12,7 @@ export class PersonComponent implements OnInit, ModalChild {
   @Input() data: any;
   @Input() person: Person;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     if (this.data && !this.person) {
@@ -20,4 +20,9 @@ export class PersonComponent implements OnInit, ModalChild {
     }
   }
 
+  onChanged(info: Information, attribute: string) {
+    const personUpdate = {};
+    personUpdate[attribute] = info;
+    this.dataService.update(CLASSES.Person, Object.assign({}, this.person, personUpdate));
+  }
 }

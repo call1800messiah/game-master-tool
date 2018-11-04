@@ -9,6 +9,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
 import { ListIndexComponent } from './components/list-index/list-index.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { EntityWidgetsModule } from './modules/entity-widgets/entity-widgets.module';
+import { DynamicFormsModule } from './modules/dynamic-forms/dynamic-forms.module';
 
 
 
@@ -20,6 +21,7 @@ import { EntityWidgetsModule } from './modules/entity-widgets/entity-widgets.mod
   ],
   exports: [
     CommonModule,
+    DynamicFormsModule,
     EntityWidgetsModule,
     FormsModule,
     HttpClientModule,
@@ -31,6 +33,7 @@ import { EntityWidgetsModule } from './modules/entity-widgets/entity-widgets.mod
   ],
   imports: [
     CommonModule,
+    DynamicFormsModule,
     EntityWidgetsModule,
     FormsModule,
     HttpClientModule,

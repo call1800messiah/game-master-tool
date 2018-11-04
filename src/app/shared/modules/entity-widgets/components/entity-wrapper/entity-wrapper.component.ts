@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Entity } from '@app/core';
+import { Entity, DataService } from '@app/core';
 
 
 
@@ -11,11 +11,26 @@ import { Entity } from '@app/core';
 })
 export class EntityWrapperComponent implements OnInit {
   @Input() entity: Entity;
+  public editing: boolean;
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+    this.editing = false;
+  }
 
   ngOnInit() {
     
   }
 
+  updateEntityVisibility(visible: boolean): void {
+    this.dataService.update(this.entity.className, Object.assign({}, this.entity, { visible }))
+  }
+  
+  startEdit(): void {
+    this.editing = true;
+  }
+  
+  stopEdit(name: string): void {
+    this.editing = false;
+    this.dataService.update(this.entity.className, Object.assign({}, this.entity, { name }))
+  }
 }

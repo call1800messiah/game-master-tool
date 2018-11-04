@@ -1,30 +1,41 @@
-.content {
-  border: 1px solid white;
-  margin: 0 -1px;
+.information {
+  position: relative;
+  padding-right: 20px;
   
-  &:hover {
-    border: 1px solid rgb(197,197,197);
-    cursor: pointer;
+  gmt-button-visible {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
-}
+  
+  .content {
+    border: 1px solid white;
+    margin: 0 -1px;
 
-input {
-  line-height: 21px;
-  padding: 0 3px;
-  width: calc(100% - 8px);
-}
+    &:hover {
+      border: 1px solid rgb(197,197,197);
+      cursor: pointer;
+    }
+  }
 
-.label {
-  display: inline-block;
-  font-weight: bold;
-  width: 33%;
-}
+  input {
+    line-height: 19px;
+    padding: 0 3px;
+    width: calc(100% - 8px);
+  }
 
-.label + .content {
-  display: inline-block;
-  width: 66%;
-}
+  .label {
+    display: inline-block;
+    font-weight: bold;
+    width: 33%;
+  }
 
-.label + input {
-  width: calc(66% - 8px);
+  .label + .content {
+    display: inline-block;
+    width: 66%;
+  }
+
+  .label + input {
+    width: calc(66% - 8px);
+  }
 }
